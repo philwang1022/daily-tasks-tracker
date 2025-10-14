@@ -47,6 +47,15 @@ def delete_task(tasks):
     except (ValueError, IndexError):
         print("❌ 無效的編號！")
 
+def search(tasks):
+    # list_tasks(tasks)
+    try:
+        keyword = str(input("輸入要搜尋的任務關鍵字："))
+        result = [item['title'] for item in tasks if keyword in item["title"]]
+        print(f"{result}以上任務有此關鍵字")
+    except (ValueError, IndexError):
+        print("❌ 無效的編號！")
+
 def main():
     tasks = load_tasks()
 
@@ -56,7 +65,8 @@ def main():
         print("2. 新增任務")
         print("3. 標記完成")
         print("4. 刪除任務")
-        print("5. 離開")
+        print("5. 搜尋任務")
+        print("6. 離開")
 
         choice = input("選擇功能：")
         if choice == "1":
@@ -68,6 +78,8 @@ def main():
         elif choice == "4":
             delete_task(tasks)
         elif choice == "5":
+            search(tasks)
+        elif choice == "6":
             print("👋 再見！")
             break
         else:
