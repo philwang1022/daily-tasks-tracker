@@ -5,6 +5,9 @@ on:
     tags:
       - 'v*'   # 當你 push 例如 v1.0、v2.1 時會觸發
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
