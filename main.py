@@ -82,6 +82,8 @@ def main():
         elif choice == "6":
             print("👋 再見！")
             break
+        elif choice == "7":
+            print("777777！")
         else:
             print("❌ 無效的選擇！")
 
